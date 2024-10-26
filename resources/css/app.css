@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 body {
+  height: 100vh;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(https://img.freepik.com/premium-photo/pixel-art-coffee-shop-park-with-trees-facade-old-coffee-shop-background-8-bit-game-ai_985124-2225.jpg);
+  /* background-image: url(https://i.pinimg.com/564x/d3/0e/c4/d30ec4f68be01eccfd1185327c739a58.jpg); */
 
   /* Animation properties */
   /* animation: moveBackground 60s linear infinite; */

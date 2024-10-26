@@ -1,20 +1,19 @@
 <?php
 
+use App\Http\Controllers\DishController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', DishController::class);
 
 Route::get('/about', function(){
-    return view('about');
+    return view('pages.about.index');
 });
 
 Route::get('/work', function(){
-    return view('work');
+    return view('pages.about.work');
 });
 
 Route::get('/services', function(){
-    return view('services');
+    return view('pages.about.services');
 });
 
