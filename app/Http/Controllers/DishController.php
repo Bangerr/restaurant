@@ -7,7 +7,8 @@ use App\Models\Dish;
 
 class DishController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         // $dishes = Dish::paginate(6);
 
@@ -22,11 +23,12 @@ class DishController extends Controller
         $dish->image_path = "test";
         $dish->create();
 
-        return view('pages.home.index');
+        return view('pages.dishes.index');
     }
 
-    public function __invoke(){
+    public function __invoke()
+    {
         $dishes = Dish::paginate(6);
-        return view('pages.home.index', compact('dishes'));
+        return view('pages.dishes.index', compact('dishes'));
     }
 }

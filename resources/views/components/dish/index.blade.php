@@ -1,5 +1,5 @@
-<div>
-    <h2>{{ $post->title() }}</h2>
+<div class="border-2 w-[200px]">
+    <h2>{{ $dish->title() }}</h2>
     <div class="dish-card">
         <h2>{{ $dish->title }}</h2>
         <p>{{ $dish->description }}</p>
