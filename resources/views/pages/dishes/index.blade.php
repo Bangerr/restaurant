@@ -30,7 +30,7 @@
         <div class="flex flex-row gap-x-5 ">
 
             @foreach ($dishes as $dish)
-                <div class="flex border w-[200px] justify-start ">
+                <div class="flex border w-[300px] justify-start ">
                     <x-dish.index :dish="$dish" />
                 </div>
             @endforeach
