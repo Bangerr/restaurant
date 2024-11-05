@@ -7,6 +7,7 @@ use App\Models\Dish;
 
 class DishController extends Controller
 {
+
     public function index()
     {
 
@@ -30,5 +31,16 @@ class DishController extends Controller
     {
         $dishes = Dish::paginate(6);
         return view('pages.dishes.index', compact('dishes'));
+    }
+
+    /*
+    * Show the Dynamic DishId
+    * @params $dishId
+    * @return $dishId
+    */
+
+    public function showDish($dishId)
+    {
+        dd($dishId);
     }
 }

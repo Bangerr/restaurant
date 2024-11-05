@@ -9,6 +9,8 @@ Route::get('/', function () {
 
 Route::get('/dishes', DishController::class);
 
+Route::get('/dishes/{id}', [DishController::class, 'showDish'])->name('showDish')->where('dishId', '1');
+
 
 Route::get('/about', function () {
     return view('pages.about.index');
