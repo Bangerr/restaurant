@@ -14,7 +14,7 @@ class Dish extends Model
         'title',
         'description',
         'instructions',
-        'image_path'
+        'image_path',
     ];
 
     public function id(): int

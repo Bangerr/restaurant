@@ -17,14 +17,23 @@ class DishController extends Controller
         //     'dishes' => $dishes,
         // ]);
 
-        $dish = new Dish();
-        $dish->title = "test1";
-        $dish->description = "test";
-        $dish->instructions = "test1";
-        $dish->image_path = "test";
-        $dish->create();
+        // $dish = new Dish([
+        //     'title' => "test1",
+        // ]);
+        // $dish->save();
 
-        return view('pages.dishes.index');
+        $dish = new Dish();
+        $dish->title = "test2";
+        $dish->description = "test2";
+        $dish->instructions = "test2";
+        $dish->image_path = "test2";
+        $dish->save();
+
+        var_dump(Dish::all());
+
+        return view('pages.dishes.index', [
+            'dishes' => Dish::all()
+        ]);
     }
 
     public function __invoke()
@@ -41,6 +50,7 @@ class DishController extends Controller
 
     public function showDish($dishId)
     {
-        dd($dishId);
+        return $dishId;
+        //dd($dishId);
     }
 }
