@@ -1,4 +1,5 @@
-<div class="relative flex flex-col gap-3 p-2 hover:cursor-pointer hover:scale-105 animate duration-150">
+<div class="relative flex flex-col gap-3 p-2 hover:cursor-pointer hover:scale-105 animate duration-150"
+    onclick="handleDishClick({{ $dish->id }})">
     <h2 class="text-xl inline-flex p-2">
         <p class="">Dish name: </p>{{ $dish->title() }}
     </h2>

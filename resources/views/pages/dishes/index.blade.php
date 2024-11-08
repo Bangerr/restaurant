@@ -27,10 +27,11 @@
 
     <div class="w-full mx-auto mt-5">
 
-        <div class="flex flex-row gap-x-5 ">
+        <div class="grid grid-cols-4 gap-x-5 ">
 
             @foreach ($dishes as $dish)
-                <div class="flex border w-[300px] justify-start ">
+                {{-- onClick event --}}
+                <div class="flex  w-[300px] justify-start ">
                     <x-dish.index :dish="$dish" />
                 </div>
             @endforeach
@@ -39,6 +40,14 @@
     </div>
 
     <x-footer></x-footer>
+
+    <script>
+        function handleDishClick(dishId) {
+            console.log("Dish clicked:", dishId);
+
+            window.location.href = `/dishes/${dishId}`;
+        }
+    </script>
 </body>
 
 </html>
