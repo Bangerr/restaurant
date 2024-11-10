@@ -7,9 +7,9 @@ Route::get('/', function () {
     return view('pages.home.index');
 });
 
-Route::get('/dishes', [DishController::class, 'index']);
+Route::get('/dishes', [DishController::class, 'index'])->name('dishes.index');
 
-Route::get('/dishes/{id}', [DishController::class, 'showDish']);
+Route::get('/dishes/{id}', [DishController::class, 'showDish'])->name('dishes.show');
 
 
 Route::get('/about', function () {

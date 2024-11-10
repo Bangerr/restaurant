@@ -11,36 +11,29 @@ class DishController extends Controller
     public function index()
     {
 
-        // $dishes = Dish::paginate(6);
-
-        // return view('pages.home.index', [
-        //     'dishes' => $dishes,
-        // ]);
-
-        // $dish = new Dish([
-        //     'title' => "test1",
-        // ]);
+        // $dish = new Dish();
+        // $dish->title = "test2";
+        // $dish->description = "test2";
+        // $dish->instructions = "test2";
+        // $dish->image_path = "test2";
         // $dish->save();
 
-        $dish = new Dish();
-        $dish->title = "test2";
-        $dish->description = "test2";
-        $dish->instructions = "test2";
-        $dish->image_path = "test2";
-        $dish->save();
+        // //var_dump(Dish::all());
 
-        var_dump(Dish::all());
+        // return view('pages.dishes.index', [
+        //     'dishes' => Dish::all()
+        // ]);
 
         return view('pages.dishes.index', [
             'dishes' => Dish::all()
         ]);
     }
 
-    public function __invoke()
-    {
-        $dishes = Dish::paginate(6);
-        return view('pages.dishes.index', compact('dishes'));
-    }
+    // public function __invoke()
+    // {
+    //     $dishes = Dish::paginate(6);
+    //     return view('pages.dishes.index', compact('dishes'));
+    // }
 
     /*
     * Show the Dynamic DishId
@@ -50,7 +43,18 @@ class DishController extends Controller
 
     public function showDish($dishId)
     {
-        return $dishId;
-        //dd($dishId);
+        try {
+
+            $dish = Dish::findOrFail($dishId); // Using findOrFail for better error handling
+
+            // Note: changed from 'index' to 'show'
+            return view('pages.dishes.show', [
+                'dish' => $dish
+            ]);
+        } catch (\Exception $e) {
+            // Log ther error
+            \Log::error('Dish error: ' . $e->getMessage());
+            throw $e;
+        }
     }
 }
