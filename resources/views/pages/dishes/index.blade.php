@@ -45,7 +45,7 @@
         function handleDishClick(dishId) {
             console.log("Dish clicked:", dishId);
 
-            window.location.href = `/dishes/${dishId}`;
+            window.location.href = `/dashboard/restaurant/public/dishes/${dishId}`;
         }
     </script>
 </body>
