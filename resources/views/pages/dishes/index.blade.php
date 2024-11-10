@@ -27,11 +27,11 @@
 
     <div class="w-full mx-auto mt-5">
 
-        <div class="grid grid-cols-4 gap-x-5 ">
+        <div class="grid grid-cols-4 gap-5 ">
 
             @foreach ($dishes as $dish)
                 {{-- onClick event --}}
-                <div class="flex  w-[300px] justify-start ">
+                <div class="flex  xl:w-[300px] sm:w-[200px] w-[150px] justify-start">
                     <x-dish.index :dish="$dish" />
                 </div>
             @endforeach
