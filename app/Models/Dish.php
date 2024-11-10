@@ -17,6 +17,8 @@ class Dish extends Model
         'image_path',
     ];
 
+    protected $table = 'dishes';
+
     public function id(): int
     {
         return $this->id;
