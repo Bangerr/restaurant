@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\DishController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
+
 
 Route::get('/', function () {
     return view('pages.home.index');
@@ -23,3 +27,6 @@ Route::get('/work', function () {
 Route::get('/services', function () {
     return view('pages.about.services');
 });
+
+Route::get('image-upload', [ImageController::class, 'upload'])->name('image.upload');
+Route::post('image-store', [ImageController::class, 'store'])->name('image.upload.post');
