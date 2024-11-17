@@ -27,10 +27,13 @@
 
     <main class="h-full mt-5">
         <section id="landing" class="section">
-            <div class="">
+            <div class="mb-5">
                 <h1 class="text-2xl font-bold">Recipes</h1>
 
             </div>
+            <a href="{{ route('dishes.index') }}" class="border border-black p-2">
+                --> Go to Recipes
+            </a>
         </section>
     </main>
 
