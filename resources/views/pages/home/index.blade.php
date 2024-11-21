@@ -31,10 +31,19 @@
                 <h1 class="text-2xl font-bold">Recipes</h1>
 
             </div>
-            <a href="{{ route('dishes.index') }}" class="border border-black p-2">
-                --> Go to Recipes
-            </a>
+            <div class="w-5/6 flex flex-row gap-5 ">
+                <a href="{{ route('dishes.index') }}" class="border border-black p-2">
+                    --> Go to Recipes
+                </a>
+
+
+                <a href="./upload-dish" class="border border-black p-2">
+                    --> Upload Dish
+                </a>
+
+            </div>
         </section>
+
     </main>
 
     <x-footer></x-footer>

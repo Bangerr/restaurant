@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class ImageController extends Controller
 {
     //Return the form to upload
-    public function upload()
+    public function index()
     {
         return view('pages.upload.index');
     }
