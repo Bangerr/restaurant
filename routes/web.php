@@ -28,7 +28,5 @@ Route::get('/services', function () {
     return view('pages.about.services');
 });
 
-
-
 Route::get('/upload-dish', [ImageController::class, 'index'])->name('upload.index');
 Route::post('image-store', [ImageController::class, 'store'])->name('image.upload.post');
