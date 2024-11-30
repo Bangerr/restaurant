@@ -41,6 +41,17 @@
                         </div>
 
                         <div class="col-md-6">
+                            <label for="">Description</label>
+                            <textarea type="text" name="description" class="form-control"></textarea>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="">Instructions</label>
+                            <textarea name="instructions" cols="30" rows="10" class="form-control"></textarea>
+
+                        </div>
+
+                        <div class="col-md-6">
                             <label for="">Image</label>
                             <input type="file" name="image" class="form-control">
                         </div>
