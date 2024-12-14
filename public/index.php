@@ -2,9 +2,6 @@
 
 use Illuminate\Http\Request;
 
-// Increase PHP memory limit
-ini_set('memory_limit', '512MB'); // You can adjust the value as needed
-
 define('LARAVEL_START', microtime(true));
 
 // Determine if the application is in maintenance mode...
