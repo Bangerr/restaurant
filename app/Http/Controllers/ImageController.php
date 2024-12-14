@@ -45,7 +45,7 @@ class ImageController extends Controller
 
                 // Get the full URL of the image
                 $url = Storage::disk('s3')->url($path);
-                \Log::info('Image URL: ' . $url);
+                //\Log::info('Image URL: ' . $url);
                 echo $url;
 
 
