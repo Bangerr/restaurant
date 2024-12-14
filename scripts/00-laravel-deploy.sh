@@ -10,3 +10,12 @@ php artisan route:cache
 
 echo "Running migrations..."
 php artisan migrate --force
+
+# Start PHP-FPM
+echo "Starting PHP-FPM..."
+php-fpm -D
+
+# Give it a moment to start
+sleep 2
+
+echo "Setup completed"
