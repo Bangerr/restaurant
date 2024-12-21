@@ -1,21 +1,33 @@
-#!/usr/bin/env bash
-echo "Running composer"
-composer install --no-dev --working-dir=/var/www/html
+#!/bin/bash
+set -e
 
-echo "Caching config..."
-php artisan config:cache
+echo "Deployment started ..."
 
-echo "Caching routes..."
-php artisan route:cache
+# Enter maintenance mode or return true
+# if already is in maintenance mode
+(php artisan down) || true
 
-echo "Running migrations..."
+# Pull the latest version of the app
+git reset --hard
+git pull origin master
+
+# Install composer dependencies
+composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+# Clear the old cache
+php artisan clear-compiled
+
+# Recreate cache
+php artisan optimize
+
+# Compile npm assets
+yarn
+yarn build
+
+# Run database migrations
 php artisan migrate --force
 
-# Start PHP-FPM
-echo "Starting PHP-FPM..."
-php-fpm -D
+# Exit maintenance mode
+php artisan up
 
-# Give it a moment to start
-sleep 2
-
-echo "Setup completed"
+echo "Deployment finished!"
